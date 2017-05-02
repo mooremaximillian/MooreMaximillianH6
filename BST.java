@@ -1,7 +1,7 @@
 public class BST
 {
   
-  private BSTNode root;
+  public BSTNode root;
   
   
   public BST()
@@ -49,6 +49,32 @@ public class BST
         }
       }
      }
+   
+   public void search(int data)
+  {
+    search(root, data);
+  }
+   
+   public BSTNode search(BSTNode root, int data)
+{
+    
+    if (root==null || root.getData()==data)
+        return root;
+    
+ 
+    
+    if (root.getData() > data)
+        return search(root.left, data);
+ 
+    
+    return search(root.right, data);
+      
+    
+}
+   
+     
+   
+       
    
    public void inorder()
      {
